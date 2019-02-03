@@ -24,8 +24,7 @@ app.set('view engine', 'handlebars');
 // The request handler must be the first middleware on the app
 app.use(Sentry.Handlers.requestHandler());
 
-//TODO: const routes = require('./controllers');
-//TODO: app.use(routes);
+require('./controllers/api-routes')(app);
 
 app.get('/', function mainHandler(req, res) {
     throw new Error('Broke!');
